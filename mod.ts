@@ -1,9 +1,6 @@
-import { load } from "$std/dotenv/mod.ts";
 import { LoggedClaims, OdataQuery } from "./types.ts";
 import { LoginFailedError, TagoneError } from "./errors.ts";
 import { mountOdataQuery } from "./helpers.ts";
-
-const env = await load();
 
 class TagoneConnector {
   static cookieName = "TagOneCookie";
