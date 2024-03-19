@@ -137,13 +137,3 @@ class TagoneConnector {
 
 export { TagoneConnector, TagoneError, LoginFailedError };
 export type { OdataQuery };
-
-if (import.meta.main) {
-  const tagone = new TagoneConnector(env["TAGONE_BASE_URL"]!);
-  tagone.doLogin(env["TEST_USER"], env["TEST_PASSWORD"]).then((claims) => {
-    console.log(claims);
-    tagone.getDepartamentos().then((deps) => {
-      console.log(deps);
-    });
-  });
-}
